@@ -9,13 +9,13 @@ import dash_core_components as dcc
 import dash_html_components as html
 import dash_cytoscape as cyto
 import plotly.express as px
-from dash.dependencies import Input, Output, State, ALL
+from dash.dependencies import Input, Output
 from copy import deepcopy
 
 from app import utils
 
 # Load extra layouts
-cyto.load_extra_layouts()
+# cyto.load_extra_layouts()
 
 # external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 external_stylesheets = []
@@ -25,6 +25,8 @@ INSTRUCTIONS = """### Instructions
 2. Selected the atoms *in order while holding SHIFT* according to your mapping and see the translation from RDKit standard numbering to your own selected mapping.
 
 You can deselect the mapping by clicking in the blank canvas.
+
+Source code is available [on GitHub](https://github.com/jvansan/atom_mapping_app).
 """
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
@@ -108,7 +110,7 @@ def update_mol_cyto(smi):
 def update_atom_text(cy, selected):
     if not selected:
         selected = []
-    print("selected", selected)
+    # print("selected", selected)
     return create_mol_table(cy, selected=selected)
 
 
