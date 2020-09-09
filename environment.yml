@@ -1,0 +1,13 @@
+name: atomorder
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - rdkit
+  - dash
+  - dash-renderer
+  - dash-core-components
+  - dash-html-components
+  - dash_cytoscape
+  - networkx
+  - gunicorn
